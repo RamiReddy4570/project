@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <style>
+            a{
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 10px 20px;
+                text-decoration: none;
+            }
+        </style>
+        <script>
+            function myName(x)
+            {
+                var name=x.value;
+                var rname=/^[a-zA-Z]+$/;
+                if(!rname.test(name))
+                {
+                    x.value="";
+                    //document.getElementById("p1").innerHTML = "Enter a correct value";
+                    alert("Please enter valid name");
+                }
+                else{
+                    document.getElementById("p1").innerHTML = "";
+                }
+            }
+            function myUname(x)
+            {
+                var uname=x.value;
+                var runame=/^[A-Za-z0-9]+$/;
+                if(!runame.test(uname))
+                {
+                    x.value="";
+                    //document.getElementById("p2").innerHTML = "Username must have alphabet characters only";
+                    alert("Please enter valid username");
+                }
+                else{
+                    document.getElementById("p2").innerHTML = "";
+                }
+            }
+            function myPass(x)
+            {
+                var pass=x.value;
+                var rpass=/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+                if(!rpass.test(pass))
+                {
+                    x.value="";
+                    //document.getElementById("p3").innerHTML = "enter a correct value";
+                    alert("Please enter valid Password");
+                }
+                if(pass.length<6)
+                {
+                    x.value="";
+                    //document.getElementById("p3").innerHTML = "Password length must be greater than 6";
+                    alert("Password length must be greater than 6");
+                }
+                if(pass.length>=20)
+                {
+                    x.value="";
+                    //document.getElementById("p3").innerHTML = "Password length must be less than 20";
+                    alert("Password length must be less than 20");
+                }
+            }
+            function myEmail(x)
+            {
+                var name=x.value;
+                var rname=/[a-zA-Z0-9]+[@][a-z]+[.][a-z]+/;
+                if(!rname.test(name))
+                {
+                    x.value="";
+                    alert("Please enter valid Email address");
+                    return false;
+                }
+            }
+            function myMb(x)
+            {
+                var pass=x.value;
+                var rpass=/[0-9]+/;
+                if(!rpass.test(pass))
+                {
+                    x.value="";
+                    //document.getElementById("p5").innerHTML = "enter a correct value";
+                    alert("Please enter valid Mobile Number");
+                }
+                else if(pass.length!=10)
+                {
+                    x.value="";
+                    //document.getElementById("p5").innerHTML = "Password length must be contain 10 digits";
+                    alert("Mobile Number length must be contain 10 digits");
+                }
+                else 
+                {
+                    document.getElementById("p3").innerHTML = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div style="background-color: aquamarine; height: 20%; width: 100%;">
+            <h1 style="text-align: center; ">LAKIREDDY BALIREDDY COOLEGE OF ENGINEERING</h1>
+            <h4 style="text-align: center;">Autonomous</h4>
+            <h3 style="text-align: center;">Mylavaram</h3>
+        </div>
+        <div style="background-color: aqua;">
+            <button style="background-color: rgb(228, 231, 11);"><a href="index.html">HOME</a></button>
+            <button style="background-color: rgb(238, 241, 8);"><a href="register1.html">REGISTER</a></button>
+            <button style="background-color: rgb(228, 231, 12);"><a href="login1.html">LOGIN</a></button>
+        </div>
+        <center><h1>REGISTRATION</h1></center><br><br><br>
+        <center><div style="text-align: center; background-color: aqua; width: 40%;">
+            <form action="login1.html">
+                <br><br>NAME:<input type="text" name="name" onchange="myName(this)" required><p id="p1"></p>
+                USERID:<input type="text" name="uname" onchange="myUname(this)" required><p id="p2"></p>
+                PASSWORD:<input type="password" name="pass" onchange="myPass(this)" required><p id="p3"></p>
+                Email:<input type="email" name="email" onchange="myEmail(this)" required><p id="p4"></p>
+                MobileNumber:<input type="text" name="mb" onchange="myMb(this)" required><p id="p5"></p>
+                <input type="submit" value="SUBMIT"><br><br>
+            </form>
+        </div></center>
+    </body>
+</html>
